@@ -21,7 +21,6 @@ export default function CreatePost() {
   const [kategori, setKategori] = useState("");
   const [location, setLocation] = useState("");
 
-  // ✅ EMULATOR FIX
   const API_URL = "http://10.0.2.2:8000/api/posts";
 
   const pickImage = async () => {
@@ -35,7 +34,6 @@ export default function CreatePost() {
   };
 
   const handlePost = async () => {
-    // ✅ VALIDASI
     if (!caption || !image || !kategori || !vibe) {
       alert("Semua field wajib diisi!");
       return;
@@ -90,7 +88,6 @@ export default function CreatePost() {
       </View>
 
       <ScrollView contentContainerStyle={{ padding: 20 }}>
-        {/* CAPTION */}
         <TextInput
           placeholder="Apa yang kamu pikirkan?"
           value={caption}
@@ -99,7 +96,6 @@ export default function CreatePost() {
           multiline
         />
 
-        {/* IMAGE PICK */}
         <TouchableOpacity style={styles.imageBox} onPress={pickImage}>
           {image ? (
             <Image source={{ uri: image }} style={{ flex: 1 }} />
@@ -108,7 +104,6 @@ export default function CreatePost() {
           )}
         </TouchableOpacity>
 
-        {/* URL IMAGE */}
         <TextInput
           placeholder="Atau URL image..."
           value={image.startsWith("http") ? image : ""}
@@ -116,7 +111,6 @@ export default function CreatePost() {
           style={styles.input}
         />
 
-        {/* KATEGORI */}
         <TextInput
           placeholder="Kategori (#travel)"
           value={kategori}
@@ -124,7 +118,6 @@ export default function CreatePost() {
           style={styles.input}
         />
 
-        {/* LOKASI */}
         <TextInput
           placeholder="Lokasi"
           value={location}
@@ -132,7 +125,6 @@ export default function CreatePost() {
           style={styles.input}
         />
 
-        {/* VIBE */}
         <View style={styles.vibeRow}>
           {["Senang", "Sedih", "Marah", "Biasa", "Kecewa"].map((v) => (
             <TouchableOpacity

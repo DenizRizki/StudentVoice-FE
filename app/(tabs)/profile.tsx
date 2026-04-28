@@ -15,8 +15,6 @@ const { width } = Dimensions.get("window");
 
 export default function ProfileScreen() {
   const [activeTab, setActiveTab] = useState("Postingan");
-
-  // Data Dummy untuk Grid Postingan
   const userPosts = [
     {
       id: "1",
@@ -42,7 +40,7 @@ export default function ProfileScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* HEADER LOGO */}
+      {/* HEADER */}
       <View style={styles.headerNav}>
         <Ionicons name="menu-outline" size={28} color="#5E63F1" />
         <Text style={styles.logoText}>VibePulse</Text>
@@ -56,7 +54,6 @@ export default function ProfileScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 100 }}
       >
-        {/* PROFILE INFO */}
         <View style={styles.profileHeader}>
           <Image
             source={{ uri: "https://i.pravatar.cc/150?u=elena" }}
@@ -75,8 +72,6 @@ export default function ProfileScreen() {
             moments. ✨
           </Text>
         </View>
-
-        {/* STATS SECTION */}
         <View style={styles.statsContainer}>
           <View style={styles.statBox}>
             <Text style={styles.statNumber}>128</Text>
@@ -91,8 +86,6 @@ export default function ProfileScreen() {
             <Text style={styles.statLabel}>FOLLOWING</Text>
           </View>
         </View>
-
-        {/* TAB NAVIGATION */}
         <View style={styles.tabsContainer}>
           {["Postingan", "Media", "Suka"].map((tab) => (
             <TouchableOpacity
@@ -114,8 +107,6 @@ export default function ProfileScreen() {
             </TouchableOpacity>
           ))}
         </View>
-
-        {/* MASONRY-LIKE GRID POSTS */}
         <View style={styles.gridContainer}>
           {userPosts.map((post, index) => (
             <Image
@@ -123,7 +114,6 @@ export default function ProfileScreen() {
               source={{ uri: post.image }}
               style={[
                 styles.gridImage,
-                // Logika sederhana untuk membuat variasi ukuran seperti di gambar
                 {
                   height: index === 0 ? 250 : 180,
                   width: index === 0 ? width - 40 : (width - 50) / 2,

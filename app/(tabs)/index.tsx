@@ -19,7 +19,6 @@ import {
 export default function LoginScreen() {
   const [secureText, setSecureText] = useState(true);
 
-  // Kita masukkan seluruh UI ke dalam fungsi render agar bersih
   const renderLoginUI = () => (
     <View style={styles.scrollContainer}>
       {/* HEADER SECTION */}

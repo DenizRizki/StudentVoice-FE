@@ -2,16 +2,16 @@ import { Feather } from "@expo/vector-icons";
 import { router } from "expo-router";
 import React from "react";
 import {
-    KeyboardAvoidingView,
-    Platform,
-    SafeAreaView,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function DaftarScreen() {
@@ -26,7 +26,6 @@ export default function DaftarScreen() {
           contentContainerStyle={styles.scrollContainer}
           showsVerticalScrollIndicator={false}
         >
-          {/* Header Section */}
           <View style={styles.headerContainer}>
             <Text style={styles.heading}>Bergabung dengan</Text>
             <Text style={styles.brandName}>VibePulse.</Text>
@@ -36,9 +35,7 @@ export default function DaftarScreen() {
             </Text>
           </View>
 
-          {/* Form Section */}
           <View style={styles.formContainer}>
-            {/* Input Nama */}
             <Text style={styles.label}>NAMA LENGKAP</Text>
             <View style={styles.inputContainer}>
               <TextInput
@@ -49,7 +46,6 @@ export default function DaftarScreen() {
               <Feather name="user" size={18} color="#CBD5E0" />
             </View>
 
-            {/* Input Email */}
             <Text style={styles.label}>EMAIL</Text>
             <View style={styles.inputContainer}>
               <TextInput
@@ -61,7 +57,6 @@ export default function DaftarScreen() {
               <Feather name="at-sign" size={18} color="#CBD5E0" />
             </View>
 
-            {/* Input Password */}
             <Text style={styles.label}>KATA SANDI</Text>
             <View style={styles.inputContainer}>
               <TextInput
@@ -73,7 +68,6 @@ export default function DaftarScreen() {
               <Feather name="lock" size={18} color="#CBD5E0" />
             </View>
 
-            {/* Input Konfirmasi Password */}
             <Text style={styles.label}>KONFIRMASI KATA SANDI</Text>
             <View style={styles.inputContainer}>
               <TextInput
@@ -91,7 +85,6 @@ export default function DaftarScreen() {
               <Text style={styles.linkText}>Kebijakan Privasi</Text> kami.
             </Text>
 
-            {/* Tombol Daftar Sekarang - Navigasi ke Home */}
             <TouchableOpacity
               style={styles.registerButton}
               activeOpacity={0.8}
@@ -100,7 +93,6 @@ export default function DaftarScreen() {
               <Text style={styles.registerButtonText}>Daftar Sekarang →</Text>
             </TouchableOpacity>
 
-            {/* Footer - Navigasi Kembali ke Login (index) */}
             <View style={styles.footer}>
               <Text style={styles.footerText}>Sudah memiliki akun? </Text>
               <TouchableOpacity onPress={() => router.push("/")}>

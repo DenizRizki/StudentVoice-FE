@@ -31,7 +31,6 @@ export default function TabLayout() {
         },
       }}
     >
-      {/* TAB HOME - Mengarah ke file home.tsx */}
       <Tabs.Screen
         name="home"
         options={{
@@ -48,7 +47,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* TAB EXPLORE (DISCOVER) - Mengarah ke file explore.tsx */}
       <Tabs.Screen
         name="explore"
         options={{
@@ -63,7 +61,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* TAB SEARCH - Kosongkan dulu (pakai placeholder/layar kosong) */}
       <Tabs.Screen
         name="search_placeholder"
         options={{
@@ -78,14 +75,12 @@ export default function TabLayout() {
         }}
         listeners={{
           tabPress: (e) => {
-            // Mencegah navigasi karena file search.tsx belum ada
             e.preventDefault();
             alert("Fitur Search akan segera hadir!");
           },
         }}
       />
 
-      {/* TAB PROFILE - Mengarah ke file daftar.tsx (karena di folder kamu adanya daftar.tsx) */}
       <Tabs.Screen
         name="profile"
         options={{
@@ -100,7 +95,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* SEMBUNYIKAN FILE LAIN DARI NAV BAR */}
       <Tabs.Screen name="index" options={{ href: null }} />
       <Tabs.Screen name="create" options={{ href: null }} />
     </Tabs>

@@ -1,5 +1,3 @@
-// File: app/(tabs)/explore.tsx
-
 import { Ionicons } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
 import {
@@ -11,17 +9,14 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 
 export default function ExploreScreen() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // Fungsi ambil data berita (Contoh menggunakan NewsAPI atau Mock API)
   const fetchNews = async () => {
     try {
-      // Ganti URL ini dengan API berita pilihanmu
       const response = await fetch(
         "https://newsapi.org/v2/top-headlines?country=id&apiKey=YOUR_API_KEY",
       );
@@ -58,7 +53,6 @@ export default function ExploreScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* HEADER */}
       <View style={styles.header}>
         <Ionicons name="menu-outline" size={28} color="#5E63F1" />
         <Text style={styles.logoText}>VibePulse</Text>
@@ -74,8 +68,6 @@ export default function ExploreScreen() {
       >
         <View style={styles.contentPadding}>
           <Text style={styles.mainTitle}>Jelajahi Berita</Text>
-
-          {/* SEARCH BAR */}
           <View style={styles.searchContainer}>
             <Ionicons name="search-outline" size={20} color="#A0AEC0" />
             <TextInput
@@ -84,7 +76,6 @@ export default function ExploreScreen() {
             />
           </View>
 
-          {/* TRENDING SECTION (Contoh Statis sesuai Gambar) */}
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>
               <Ionicons name="trending-up" size={18} color="#E53E3E" /> Trending
@@ -114,7 +105,6 @@ export default function ExploreScreen() {
             </View>
           </TouchableOpacity>
 
-          {/* BERITA TERBARU SECTION */}
           <View style={styles.sectionHeader}>
             <Text style={styles.sectionTitle}>Berita Terbaru</Text>
             <Ionicons name="options-outline" size={20} color="#4A5568" />

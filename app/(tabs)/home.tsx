@@ -23,8 +23,6 @@ interface Post {
 export default function Home() {
   const [posts, setPosts] = useState<Post[]>([]);
   const router = useRouter();
-
-  // ✅ EMULATOR FIX
   const API_URL = "http://10.0.2.2:8000/api/posts";
 
   const fetchPosts = async () => {
@@ -88,7 +86,6 @@ export default function Home() {
         contentContainerStyle={{ paddingBottom: 100 }}
       />
 
-      {/* FAB */}
       <TouchableOpacity
         style={styles.fab}
         onPress={() => router.push("/(tabs)/create")}
